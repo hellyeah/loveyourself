@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var animatingView: UIView!
+    @IBOutlet weak var animatingLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //animatingView.
     }
 
     override func didReceiveMemoryWarning() {
