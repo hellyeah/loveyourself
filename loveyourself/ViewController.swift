@@ -46,7 +46,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         //animatingView.center.x  -= view.bounds.width //doesnt work
         //print(animatingLabel.center.x)
 
-        print(randomXPositionInWindow())
+        //print(randomXPositionInWindow())
 
         // The onCustomTap: method will be defined in Step 3 below.
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.onCustomPan(_:)))
@@ -58,7 +58,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         animatingView.addGestureRecognizer(panGestureRecognizer)
     }
 
-    func addCustomView () {
+    func addCustomView (completion:(view: UIView) -> Void) {
         let customView = UIView(frame: CGRect(x: randomXPositionInWindow(), y: Int(screenSize.height), width: 50, height: 50))
         //customView.backgroundColor = UIColor.redColor()
         let customLabel = UILabel()
@@ -67,8 +67,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         customView.addSubview(customLabel)
         customLabel.centerInSuperview()
         self.view.addSubview(customView)
-        print(arrayOfCustomViews)
+        //print(arrayOfCustomViews)
         arrayOfCustomViews.append(customView)
+        completion(view: customView)
     }
 
     func onCustomPan(sender: UIPanGestureRecognizer) {
@@ -114,7 +115,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         //let newConstraint = NSLayoutConstraint(item: viewToAnimate, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: self.view.frame.height)
 
         // 2
-        UIView.animateWithDuration(1.0, delay: 0.0, options: .CurveEaseOut , animations: {
+        UIView.animateWithDuration(NSTimeInterval(randomNumberBetweenZeroAndN(5)), delay: NSTimeInterval(randomNumberBetweenZeroAndN(2)), options: .CurveEaseOut , animations: {
             //viewToAnimate.removeConstraint(self.leadingConstraintVertical)
             //            self.view.addConstraint(newConstraint)
             //            self.view.layoutIfNeeded()
@@ -133,36 +134,60 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         //leadingConstraintVertical = newConstraint
     }
 
+    func letItFly() {
+        let customView = UIView(frame: CGRect(x: randomXPositionInWindow(), y: Int(screenSize.height) + 100, width: 50, height: 50))
+        //customView.backgroundColor = UIColor.redColor()
+        let customLabel = UILabel()
+        customLabel.textAlignment = NSTextAlignment.Center
+        customLabel.text = "💙"
+        customView.addSubview(customLabel)
+        customLabel.centerInSuperview()
+        self.view.addSubview(customView)
+        //print(arrayOfCustomViews)
+        //arrayOfCustomViews.append(customView)
+        //completion(view: customView)
+
+        self.animateViewToTop(customView)
+//
+//        addCustomView() {
+//            (view: UIView) in
+//            self.animateViewToTop(view)
+//        }
+        //animateViewToTop(addedView)
+    }
+
     @IBAction func animateViewWithLabel(sender: AnyObject) {
-        print(arrayOfCustomViews.count)
+        //print(arrayOfCustomViews.count)
         //randomXPositionForViewInWindow -- at least 3 hearts maybe 9
         let numberOfHearts: Int = Int(randomNumberBetweenZeroAndN(6) + 3)
-        while arrayOfCustomViews.count < numberOfHearts {
-            addCustomView()
+        var i: Int = 0
+        while i < numberOfHearts {
+            letItFly()
+            i += 1
         }
-        if let viewToAnimate = sender as? UIView {
-            //animateViewToTop(viewToAnimate)
-            animateViewToTop(arrayOfCustomViews[1])
-            for view in arrayOfCustomViews {
-                animateViewToTop(view)
-            }
-        } else {
-            // 1
-            let newConstraint = NSLayoutConstraint(item: animatingView, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: self.view.frame.width)
-
-            // 2
-            UIView.animateWithDuration(1.0, delay: 0.0, options: .CurveEaseOut , animations: {
-                self.view.removeConstraint(self.leadingConstraintVertical)
-                //            self.view.addConstraint(newConstraint)
-                //            self.view.layoutIfNeeded()
-                print(self.animatingView.constraints)
-                self.animatingView.pinToRightEdgeOfSuperview(offset: 0 - self.animatingView.frame.width)
-                self.view.layoutIfNeeded()
-                }, completion: nil)
-
-            // 3
-            leadingConstraintHorizontal = newConstraint
-        }
+//        if let viewToAnimate = sender as? UIView {
+//            //animateViewToTop(viewToAnimate)
+//            animateViewToTop(arrayOfCustomViews[1])
+//            for view in arrayOfCustomViews {
+//                animateViewToTop(view)
+//            }
+//        } else {
+//            // 1
+//            let newConstraint = NSLayoutConstraint(item: animatingView, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: self.view.frame.width)
+//
+//            // 2
+//            UIView.animateWithDuration(1.0, delay: 0.0, options: .CurveEaseOut , animations: {
+//                self.view.removeConstraint(self.leadingConstraintVertical)
+//                //            self.view.addConstraint(newConstraint)
+//                //            self.view.layoutIfNeeded()
+//                //print(self.animatingView.constraints)
+//                self.animatingView.pinToRightEdgeOfSuperview(offset: 0 - self.animatingView.frame.width)
+//                self.view.layoutIfNeeded()
+//                }, completion: nil)
+//
+//            // 3
+//            leadingConstraintHorizontal = newConstraint
+//        }
     }
 
 
