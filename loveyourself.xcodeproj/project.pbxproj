@@ -14,6 +14,9 @@
 		9FF5C8981CF816FA00206E39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF5C8961CF816FA00206E39 /* LaunchScreen.storyboard */; };
 		9FF5C8A31CF816FA00206E39 /* loveyourselfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5C8A21CF816FA00206E39 /* loveyourselfTests.swift */; };
 		9FF5C8AE1CF816FA00206E39 /* loveyourselfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5C8AD1CF816FA00206E39 /* loveyourselfUITests.swift */; };
+		9FF5C8BC1CF82EC100206E39 /* KGNAutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF5C8BB1CF82EC100206E39 /* KGNAutoLayout.framework */; };
+		9FF5C8BD1CF82EC100206E39 /* KGNAutoLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF5C8BB1CF82EC100206E39 /* KGNAutoLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FF5C8C11CF82F1F00206E39 /* KGNAutoLayout.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FF5C8C01CF82F1F00206E39 /* KGNAutoLayout.framework.dSYM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9FF5C8BE1CF82EC200206E39 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9FF5C8BD1CF82EC100206E39 /* KGNAutoLayout.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FF5C8BF1CF82EE200206E39 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				9FF5C8C11CF82F1F00206E39 /* KGNAutoLayout.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9FF5C88A1CF816F900206E39 /* loveyourself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveyourself.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF5C88D1CF816FA00206E39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +74,8 @@
 		9FF5C8A91CF816FA00206E39 /* loveyourselfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = loveyourselfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF5C8AD1CF816FA00206E39 /* loveyourselfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loveyourselfUITests.swift; sourceTree = "<group>"; };
 		9FF5C8AF1CF816FA00206E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FF5C8BB1CF82EC100206E39 /* KGNAutoLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KGNAutoLayout.framework; path = Carthage/Build/iOS/KGNAutoLayout.framework; sourceTree = "<group>"; };
+		9FF5C8C01CF82F1F00206E39 /* KGNAutoLayout.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = KGNAutoLayout.framework.dSYM; path = Carthage/Build/iOS/KGNAutoLayout.framework.dSYM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF5C8BC1CF82EC100206E39 /* KGNAutoLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +107,7 @@
 		9FF5C8811CF816F900206E39 = {
 			isa = PBXGroup;
 			children = (
+				9FF5C8C21CF82F5900206E39 /* Frameworks */,
 				9FF5C88C1CF816FA00206E39 /* loveyourself */,
 				9FF5C8A11CF816FA00206E39 /* loveyourselfTests */,
 				9FF5C8AC1CF816FA00206E39 /* loveyourselfUITests */,
@@ -125,6 +156,15 @@
 			path = loveyourselfUITests;
 			sourceTree = "<group>";
 		};
+		9FF5C8C21CF82F5900206E39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FF5C8C01CF82F1F00206E39 /* KGNAutoLayout.framework.dSYM */,
+				9FF5C8BB1CF82EC100206E39 /* KGNAutoLayout.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +175,8 @@
 				9FF5C8861CF816F900206E39 /* Sources */,
 				9FF5C8871CF816F900206E39 /* Frameworks */,
 				9FF5C8881CF816F900206E39 /* Resources */,
+				9FF5C8BE1CF82EC200206E39 /* Embed Frameworks */,
+				9FF5C8BF1CF82EE200206E39 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -401,6 +443,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = loveyourself/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fontebot.loveyourself;
@@ -412,6 +458,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = loveyourself/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fontebot.loveyourself;

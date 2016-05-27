@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KGNAutoLayout
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
@@ -21,13 +22,26 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        //KGNAutoLayout
+        animatingLabel.centerInSuperview()
+
+
         //animatingView.
         //print(animatingLabel.center.x)
         //print(view.bounds.width)
         animatingView.center.x  -= view.bounds.width //doesnt work
         //print(animatingLabel.center.x)
 
+        print(randomXPositionInWindow())
 
+        //randomXPositionForViewInWindow
+        let customView = UIView(frame: CGRect(x: randomXPositionInWindow(), y: 0, width: 50, height: 50))
+        customView.backgroundColor = UIColor.redColor()
+        let customLabel = UILabel()
+        customLabel.text = "Happy"
+        customView.addSubview(customLabel)
+        self.view.addSubview(customView)
 
         // The onCustomTap: method will be defined in Step 3 below.
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.onCustomPan(_:)))
@@ -58,6 +72,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+
+    // gives view a random x position within the window bounds
+    func randomXPositionInWindow () -> Int {
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        print(screenWidth)
+        //return random value between 0 and screensize.width
+        return Int(arc4random_uniform(UInt32(screenWidth)) + 1)
     }
 
     @IBAction func animateViewWithLabel(sender: AnyObject) {

@@ -1,0 +1,10 @@
+framework module KGNAutoLayout {
+  umbrella header "KGNAutoLayout.h"
+
+  export *
+  module * { export * }
+}
+
+module KGNAutoLayout.Swift {
+    header "KGNAutoLayout-Swift.h"
+}
