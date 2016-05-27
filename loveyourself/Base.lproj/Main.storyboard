@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqL-TC-IVo">
-                                <rect key="frame" x="192" y="270" width="240" height="128"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqL-TC-IVo">
+                                <rect key="frame" x="74" y="85" width="128" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g5-bA-dHs">
-                                        <rect key="frame" x="99" y="54" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nz-uH-lHC">
+                                        <rect key="frame" x="43" y="53" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -29,24 +30,43 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="0g5-bA-dHs" firstAttribute="centerY" secondItem="qqL-TC-IVo" secondAttribute="centerY" id="7G1-ST-62x"/>
-                                    <constraint firstItem="0g5-bA-dHs" firstAttribute="centerX" secondItem="qqL-TC-IVo" secondAttribute="centerX" id="AgE-Au-uqe"/>
+                                    <constraint firstAttribute="width" constant="128" id="BEJ-pt-t6s"/>
+                                    <constraint firstItem="8nz-uH-lHC" firstAttribute="leading" secondItem="qqL-TC-IVo" secondAttribute="leading" constant="43" id="Jcb-Cs-Yvt"/>
+                                    <constraint firstItem="8nz-uH-lHC" firstAttribute="centerY" secondItem="qqL-TC-IVo" secondAttribute="centerY" id="blM-0n-t7U"/>
+                                    <constraint firstItem="8nz-uH-lHC" firstAttribute="centerX" secondItem="qqL-TC-IVo" secondAttribute="centerX" id="swq-wf-YWh"/>
+                                    <constraint firstAttribute="height" constant="128" id="u4K-aK-VZM"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Jcb-Cs-Yvt"/>
+                                    </mask>
+                                </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xz1-Sb-BSN">
+                                <rect key="frame" x="272" y="285" width="57" height="30"/>
+                                <state key="normal" title="Animate"/>
+                                <connections>
+                                    <action selector="animateViewWithLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uWd-oO-WXn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qqL-TC-IVo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8kS-nh-3Gt"/>
-                            <constraint firstItem="qqL-TC-IVo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ddt-eu-0O0"/>
+                            <constraint firstItem="qqL-TC-IVo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="VRC-0p-7xQ"/>
+                            <constraint firstItem="qqL-TC-IVo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="bfo-a7-F8g"/>
+                            <constraint firstItem="xz1-Sb-BSN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dua-XA-ZxG"/>
+                            <constraint firstItem="xz1-Sb-BSN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gw6-zH-zO0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="animatingLabel" destination="0g5-bA-dHs" id="Ev4-o4-gTE"/>
+                        <outlet property="animatingLabel" destination="8nz-uH-lHC" id="VbS-h2-l6K"/>
                         <outlet property="animatingView" destination="qqL-TC-IVo" id="n37-aT-DJt"/>
+                        <outlet property="leadingConstraint" destination="VRC-0p-7xQ" id="SAW-A1-yGr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="154" y="411"/>
         </scene>
     </scenes>
 </document>
