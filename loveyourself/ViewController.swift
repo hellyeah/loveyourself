@@ -48,12 +48,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
         print(randomXPositionInWindow())
 
-        //randomXPositionForViewInWindow -- at least 3 hearts maybe 9
-        let numberOfHearts: Int = Int(randomNumberBetweenZeroAndN(6) + 3)
-        while arrayOfCustomViews.count < numberOfHearts {
-            addCustomView()
-        }
-
         // The onCustomTap: method will be defined in Step 3 below.
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.onCustomPan(_:)))
         //var panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "onCustomPan:")
@@ -65,7 +59,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     func addCustomView () {
-        let customView = UIView(frame: CGRect(x: randomXPositionInWindow(), y: Int(screenSize.height-50), width: 50, height: 50))
+        let customView = UIView(frame: CGRect(x: randomXPositionInWindow(), y: Int(screenSize.height), width: 50, height: 50))
         //customView.backgroundColor = UIColor.redColor()
         let customLabel = UILabel()
         customLabel.textAlignment = NSTextAlignment.Center
@@ -111,7 +105,41 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         return randomNumberBetweenZeroAndN(Int(screenSize.width-50))
     }
 
+
+    //**give custom view this function or give each custom view their own leadingConstraintVertical and horizontal attributes
+    func animateViewToTop(viewToAnimate: UIView) {
+
+
+        // 1
+        //let newConstraint = NSLayoutConstraint(item: viewToAnimate, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: self.view.frame.height)
+
+        // 2
+        UIView.animateWithDuration(1.0, delay: 0.0, options: .CurveEaseOut , animations: {
+            //viewToAnimate.removeConstraint(self.leadingConstraintVertical)
+            //            self.view.addConstraint(newConstraint)
+            //            self.view.layoutIfNeeded()
+            //print(viewToAnimate.constraints)
+            viewToAnimate.pinToTopEdgeOfSuperview(offset: 0 - viewToAnimate.frame.height)
+            //viewToAnimate.pinToLeftEdgeOfSuperview(offset: CGFloat(self.screenSize.width/2))
+            viewToAnimate.pinToLeftEdgeOfSuperview(offset: viewToAnimate.frame.origin.x + viewToAnimate.frame.width)
+            viewToAnimate.layoutIfNeeded()
+            }, completion: { (Bool) -> Void in
+                viewToAnimate.removeFromSuperview()
+        })
+
+
+
+        // 3
+        //leadingConstraintVertical = newConstraint
+    }
+
     @IBAction func animateViewWithLabel(sender: AnyObject) {
+        print(arrayOfCustomViews.count)
+        //randomXPositionForViewInWindow -- at least 3 hearts maybe 9
+        let numberOfHearts: Int = Int(randomNumberBetweenZeroAndN(6) + 3)
+        while arrayOfCustomViews.count < numberOfHearts {
+            addCustomView()
+        }
         if let viewToAnimate = sender as? UIView {
             //animateViewToTop(viewToAnimate)
             animateViewToTop(arrayOfCustomViews[1])
@@ -137,24 +165,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
 
-    //**give custom view this function or give each custom view their own leadingConstraintVertical and horizontal attributes
-    func animateViewToTop(viewToAnimate: UIView) {
-        // 1
-        let newConstraint = NSLayoutConstraint(item: viewToAnimate, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: self.view.frame.height)
-
-        // 2
-        UIView.animateWithDuration(1.0, delay: 0.0, options: .CurveEaseOut , animations: {
-            viewToAnimate.removeConstraint(self.leadingConstraintVertical)
-            //            self.view.addConstraint(newConstraint)
-            //            self.view.layoutIfNeeded()
-            print(viewToAnimate.constraints)
-            viewToAnimate.pinToTopEdgeOfSuperview(offset: 0 - viewToAnimate.frame.height)
-            viewToAnimate.layoutIfNeeded()
-            }, completion: nil)
-
-        // 3
-        leadingConstraintVertical = newConstraint
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
