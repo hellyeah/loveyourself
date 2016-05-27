@@ -83,10 +83,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     // gives view a random x position within the window bounds
+    // might want to pass the function a dynamic value instead of 50 that represents the width of the CustomView we're giving a position for
     func randomXPositionInWindow () -> Int {
         //print(screenWidth)
         //return random value between 0 and screensize.width
-        return Int(arc4random_uniform(UInt32(screenSize.width)) + 1)
+        return Int(arc4random_uniform(UInt32(screenSize.width-50)) + 1)
     }
 
     @IBAction func animateViewWithLabel(sender: AnyObject) {
@@ -97,11 +98,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
         // 2
         UIView.animateWithDuration(1.0, delay: 0.0, options: .CurveEaseOut , animations: {
-            self.view.removeConstraint(self.leadingConstraintHorizontal)
+            self.view.removeConstraint(self.leadingConstraintVertical)
 //            self.view.addConstraint(newConstraint)
 //            self.view.layoutIfNeeded()
             print(self.animatingView.constraints)
-            self.animatingView.pinToLeftEdgeOfSuperview(offset: self.screenSize.width)
+            self.animatingView.pinToTopEdgeOfSuperview(offset: 0 - self.animatingView.frame.height)
             self.view.layoutIfNeeded()
             }, completion: nil)
 
