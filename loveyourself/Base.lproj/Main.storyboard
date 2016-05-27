@@ -20,14 +20,13 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqL-TC-IVo">
                                 <rect key="frame" x="74" y="85" width="128" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nz-uH-lHC">
-                                        <rect key="frame" x="43" y="53" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="💙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nz-uH-lHC">
+                                        <rect key="frame" x="63" y="53" width="22" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="BEJ-pt-t6s"/>
                                     <constraint firstItem="8nz-uH-lHC" firstAttribute="leading" secondItem="qqL-TC-IVo" secondAttribute="leading" constant="43" id="Jcb-Cs-Yvt"/>
@@ -39,9 +38,9 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xz1-Sb-BSN">
-                                <rect key="frame" x="272" y="285" width="57" height="30"/>
-                                <state key="normal" title="Animate"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xz1-Sb-BSN">
+                                <rect key="frame" x="255" y="285" width="92" height="30"/>
+                                <state key="normal" title="Love Yourself"/>
                                 <connections>
                                     <action selector="animateViewWithLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uWd-oO-WXn"/>
                                 </connections>
