@@ -14,7 +14,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var animatingView: UIView!
     @IBOutlet weak var animatingLabel: UILabel!
 
-    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    //@IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+
+    var leadingConstraintHorizontal: NSLayoutConstraint!
+    var leadingConstraintVertical: NSLayoutConstraint!
+
+    let screenSize: CGRect = UIScreen.mainScreen().bounds
 
     var animatingViewOriginalCenter: CGPoint!
 
@@ -23,14 +28,17 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+
         //KGNAutoLayout
+        leadingConstraintVertical = animatingView.pinToTopEdgeOfSuperview(offset: 65)
+        leadingConstraintHorizontal = animatingView.pinToLeftEdgeOfSuperview(offset: 54)
         animatingLabel.centerInSuperview()
 
 
         //animatingView.
         //print(animatingLabel.center.x)
         //print(view.bounds.width)
-        animatingView.center.x  -= view.bounds.width //doesnt work
+        //animatingView.center.x  -= view.bounds.width //doesnt work
         //print(animatingLabel.center.x)
 
         print(randomXPositionInWindow())
@@ -76,27 +84,29 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // gives view a random x position within the window bounds
     func randomXPositionInWindow () -> Int {
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
-        print(screenWidth)
+        //print(screenWidth)
         //return random value between 0 and screensize.width
-        return Int(arc4random_uniform(UInt32(screenWidth)) + 1)
+        return Int(arc4random_uniform(UInt32(screenSize.width)) + 1)
     }
 
     @IBAction func animateViewWithLabel(sender: AnyObject) {
+
+
         // 1
         let newConstraint = NSLayoutConstraint(item: animatingView, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: self.view.frame.width)
 
         // 2
         UIView.animateWithDuration(1.0, delay: 0.0, options: .CurveEaseOut , animations: {
-            self.view.removeConstraint(self.leadingConstraint)
-            self.view.addConstraint(newConstraint)
+            self.view.removeConstraint(self.leadingConstraintHorizontal)
+//            self.view.addConstraint(newConstraint)
+//            self.view.layoutIfNeeded()
+            print(self.animatingView.constraints)
+            self.animatingView.pinToLeftEdgeOfSuperview(offset: self.screenSize.width)
             self.view.layoutIfNeeded()
             }, completion: nil)
 
         // 3
-        leadingConstraint = newConstraint
+        leadingConstraintHorizontal = newConstraint
     }
 
     override func didReceiveMemoryWarning() {

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqL-TC-IVo">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqL-TC-IVo">
                                 <rect key="frame" x="74" y="85" width="128" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nz-uH-lHC">
@@ -50,8 +49,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qqL-TC-IVo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="VRC-0p-7xQ"/>
-                            <constraint firstItem="qqL-TC-IVo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="bfo-a7-F8g"/>
                             <constraint firstItem="xz1-Sb-BSN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dua-XA-ZxG"/>
                             <constraint firstItem="xz1-Sb-BSN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gw6-zH-zO0"/>
                         </constraints>
@@ -59,7 +56,6 @@
                     <connections>
                         <outlet property="animatingLabel" destination="8nz-uH-lHC" id="VbS-h2-l6K"/>
                         <outlet property="animatingView" destination="qqL-TC-IVo" id="n37-aT-DJt"/>
-                        <outlet property="leadingConstraint" destination="VRC-0p-7xQ" id="SAW-A1-yGr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
