@@ -18,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xz1-Sb-BSN">
-                                <rect key="frame" x="255" y="285" width="92" height="30"/>
-                                <state key="normal" title="Love Yourself"/>
+                                <rect key="frame" x="256" y="285" width="90" height="30"/>
+                                <state key="normal" title="I Love Myself"/>
                                 <connections>
                                     <action selector="animateViewWithLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uWd-oO-WXn"/>
                                 </connections>
