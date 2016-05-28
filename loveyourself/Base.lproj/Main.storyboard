@@ -21,7 +21,7 @@
                                 <rect key="frame" x="256" y="285" width="90" height="30"/>
                                 <state key="normal" title="I Love Myself"/>
                                 <connections>
-                                    <action selector="animateViewWithLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uWd-oO-WXn"/>
+                                    <action selector="animateHearts:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BfH-FA-EVX"/>
                                 </connections>
                             </button>
                         </subviews>

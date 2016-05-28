@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    @IBAction func animateViewWithLabel(sender: AnyObject) {
+    @IBAction func animateHearts(sender: AnyObject) {
         //randomXPositionForViewInWindow -- at least 3 hearts maybe 9 per click
         let numberOfHearts: Int = Int(randomNumberBetweenZeroAndN(6) + 3)
         var i: Int = 0
@@ -38,21 +38,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
 
-    func animateViewToTop (viewToAnimate: UIView) {
-        UIView.animateWithDuration(NSTimeInterval(randomDoubleBetweenZeroAndN(5)), delay: NSTimeInterval(randomDoubleBetweenZeroAndN(2)), options: .CurveEaseOut , animations: {
-            //viewToAnimate.removeConstraint(self.leadingConstraintVertical)
-                    //            self.view.addConstraint(newConstraint)
-                    //            self.view.layoutIfNeeded()
-                    //print(viewToAnimate.constraints)
-                    viewToAnimate.pinToTopEdgeOfSuperview(offset: 0 - viewToAnimate.frame.height)
-                    //viewToAnimate.pinToLeftEdgeOfSuperview(offset: CGFloat(self.screenSize.width/2))
-                  viewToAnimate.pinToLeftEdgeOfSuperview(offset: viewToAnimate.frame.origin.x + viewToAnimate.frame.width)
-                   viewToAnimate.layoutIfNeeded()
-                }, completion: { (Bool) -> Void in
-                        viewToAnimate.removeFromSuperview()
-                })
-    }
-
     func addCustomView (completion:(view: UIView) -> Void) {
         let customView = UIView(frame: CGRect(x: randomXPositionInWindow(), y: Int(screenSize.height), width: 50, height: 50))
         let customLabel = UILabel()
@@ -65,6 +50,26 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         customView.layoutIfNeeded()
 
         completion(view: customView)
+    }
+
+    func animateViewToTop (viewToAnimate: UIView) {
+
+        // start off tilted with a range of +- 30 degrees to create floaty effect as if the hearts are floating up through water
+        let tiltValue = 30.0 - Double(self.randomNumberBetweenZeroAndN(60))
+        viewToAnimate.transform = CGAffineTransformMakeRotation(CGFloat(tiltValue / 180.0 * M_PI))
+        UIView.animateWithDuration(NSTimeInterval(randomDoubleBetweenZeroAndN(5)), delay: NSTimeInterval(randomDoubleBetweenZeroAndN(2)), options: .CurveEaseOut , animations: {
+
+                viewToAnimate.pinToTopEdgeOfSuperview(offset: 0 - viewToAnimate.frame.height)
+                viewToAnimate.pinToLeftEdgeOfSuperview(offset: viewToAnimate.frame.origin.x + viewToAnimate.frame.width)
+
+                // rotate back to 0 degrees which is level
+                viewToAnimate.transform = CGAffineTransformMakeRotation(CGFloat(0.0 / 180.0 * M_PI))
+
+                viewToAnimate.layoutIfNeeded()
+
+            }, completion: { (Bool) -> Void in
+                viewToAnimate.removeFromSuperview()
+            })
     }
 
     // ## Random Number Generators should be decimal for more variation**
