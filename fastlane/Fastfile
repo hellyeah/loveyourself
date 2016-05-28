@@ -1,0 +1,44 @@
+# Minimum version of fastlane
+fastlane_version "1.32.1"
+ 
+default_platform :ios
+ 
+platform :ios do
+ 
+  # 1 
+  desc "Creating a code signing certificate and provisioning profile"
+  # 2
+  lane :provision do
+    # 3 
+    produce(
+      app_name: ‘I Love Myself’,
+      language: 'English',
+      app_version: ‘0.1’,
+      sku: '123abc'
+    )
+    # 4
+    cert
+    # 5
+    sigh(force: true)
+  end
+
+  desc "Take screenshots"
+  lane :screenshot do
+    snapshot
+  end
+
+  desc "Create ipa"
+  lane :build do
+    gym
+  end
+ 
+  error do |lane, exception|
+    # This block is called, if there was an error running a specific lane.
+  end
+
+end
+
+desc "Upload to App Store"
+lane :upload do
+  deliver
+end

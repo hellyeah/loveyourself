@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F5AEADF1CF9FB5E006FA326 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5AEADE1CF9FB5E006FA326 /* PureLayout.framework */; };
+		9F5AEAE01CF9FB5E006FA326 /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5AEADE1CF9FB5E006FA326 /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F5AEAE21CF9FB91006FA326 /* PureLayout.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9F5AEAE11CF9FB91006FA326 /* PureLayout.framework.dSYM */; };
 		9FF5C88E1CF816FA00206E39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5C88D1CF816FA00206E39 /* AppDelegate.swift */; };
 		9FF5C8901CF816FA00206E39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5C88F1CF816FA00206E39 /* ViewController.swift */; };
 		9FF5C8931CF816FA00206E39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF5C8911CF816FA00206E39 /* Main.storyboard */; };
@@ -17,6 +20,7 @@
 		9FF5C8BC1CF82EC100206E39 /* KGNAutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF5C8BB1CF82EC100206E39 /* KGNAutoLayout.framework */; };
 		9FF5C8BD1CF82EC100206E39 /* KGNAutoLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF5C8BB1CF82EC100206E39 /* KGNAutoLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FF5C8C11CF82F1F00206E39 /* KGNAutoLayout.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FF5C8C01CF82F1F00206E39 /* KGNAutoLayout.framework.dSYM */; };
+		9FF5C8C81CF9CD6200206E39 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5C8C71CF9CD6200206E39 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9F5AEAE01CF9FB5E006FA326 /* PureLayout.framework in Embed Frameworks */,
 				9FF5C8BD1CF82EC100206E39 /* KGNAutoLayout.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -54,6 +59,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				9F5AEAE21CF9FB91006FA326 /* PureLayout.framework.dSYM in CopyFiles */,
 				9FF5C8C11CF82F1F00206E39 /* KGNAutoLayout.framework.dSYM in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F5AEADE1CF9FB5E006FA326 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
+		9F5AEAE11CF9FB91006FA326 /* PureLayout.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PureLayout.framework.dSYM; path = Carthage/Build/iOS/PureLayout.framework.dSYM; sourceTree = "<group>"; };
 		9FF5C88A1CF816F900206E39 /* loveyourself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveyourself.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF5C88D1CF816FA00206E39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FF5C88F1CF816FA00206E39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +84,7 @@
 		9FF5C8AF1CF816FA00206E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FF5C8BB1CF82EC100206E39 /* KGNAutoLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KGNAutoLayout.framework; path = Carthage/Build/iOS/KGNAutoLayout.framework; sourceTree = "<group>"; };
 		9FF5C8C01CF82F1F00206E39 /* KGNAutoLayout.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = KGNAutoLayout.framework.dSYM; path = Carthage/Build/iOS/KGNAutoLayout.framework.dSYM; sourceTree = "<group>"; };
+		9FF5C8C71CF9CD6200206E39 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5AEADF1CF9FB5E006FA326 /* PureLayout.framework in Frameworks */,
 				9FF5C8BC1CF82EC100206E39 /* KGNAutoLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +117,8 @@
 		9FF5C8811CF816F900206E39 = {
 			isa = PBXGroup;
 			children = (
+				9F5AEAE11CF9FB91006FA326 /* PureLayout.framework.dSYM */,
+				9F5AEADE1CF9FB5E006FA326 /* PureLayout.framework */,
 				9FF5C8C21CF82F5900206E39 /* Frameworks */,
 				9FF5C88C1CF816FA00206E39 /* loveyourself */,
 				9FF5C8A11CF816FA00206E39 /* loveyourselfTests */,
@@ -150,6 +162,7 @@
 		9FF5C8AC1CF816FA00206E39 /* loveyourselfUITests */ = {
 			isa = PBXGroup;
 			children = (
+				9FF5C8C71CF9CD6200206E39 /* SnapshotHelper.swift */,
 				9FF5C8AD1CF816FA00206E39 /* loveyourselfUITests.swift */,
 				9FF5C8AF1CF816FA00206E39 /* Info.plist */,
 			);
@@ -177,6 +190,7 @@
 				9FF5C8881CF816F900206E39 /* Resources */,
 				9FF5C8BE1CF82EC200206E39 /* Embed Frameworks */,
 				9FF5C8BF1CF82EE200206E39 /* CopyFiles */,
+				9F5AEAE31CFA1862006FA326 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -293,6 +307,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9F5AEAE31CFA1862006FA326 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\ncopy_framework ()\n{\n    local framework=$1\n    local frameworks_folder=\"${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n    \n    mkdir -p \"$frameworks_folder\"\n    rsync -av \"$framework\" \"$frameworks_folder\"\n    \n    local file_path=\"$frameworks_folder/`basename $framework`/`basename $framework .framework`\"\n    \n    if [[ ! \"$VALID_ARCHS\" =~ \"$i386\" ]];\n    then\n    lipo -remove i386 \"$file_path\" -output \"$file_path\"\n    fi\n    \n    if [[ ! \"$VALID_ARCHS\" =~ \"$x86_64\" ]];\n    then\n    lipo -remove x86_64 \"$file_path\" -output \"$file_path\"\n    fi\n}\n\nexport -f copy_framework";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9FF5C8861CF816F900206E39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -316,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FF5C8AE1CF816FA00206E39 /* loveyourselfUITests.swift in Sources */,
+				9FF5C8C81CF9CD6200206E39 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: David Fontenot (BBQK7AXS39)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -450,8 +482,9 @@
 				INFOPLIST_FILE = loveyourself/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fontebot.loveyourself;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fontebot.loveyourself;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dfe478b5-3829-4ff6-a7a0-2491df7ac6f7";
 			};
 			name = Debug;
 		};
@@ -459,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: David Fontenot (BBQK7AXS39)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -466,8 +500,9 @@
 				INFOPLIST_FILE = loveyourself/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fontebot.loveyourself;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fontebot.loveyourself;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dfe478b5-3829-4ff6-a7a0-2491df7ac6f7";
 			};
 			name = Release;
 		};
@@ -536,6 +571,7 @@
 				9FF5C8B41CF816FA00206E39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FF5C8B51CF816FA00206E39 /* Build configuration list for PBXNativeTarget "loveyourselfTests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +580,7 @@
 				9FF5C8B71CF816FA00206E39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FF5C8B81CF816FA00206E39 /* Build configuration list for PBXNativeTarget "loveyourselfUITests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +589,7 @@
 				9FF5C8BA1CF816FA00206E39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
